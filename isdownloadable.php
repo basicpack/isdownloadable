@@ -1,7 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
 
-function isdownloadable($url, $method = 'HEAD') {
+function isDownloadable($url, $method = 'HEAD') {
 	$client = new \GuzzleHttp\Client ();//http://docs.guzzlephp.org/en/stable/
 	$headers = [ 
 			'headers' => [ 
