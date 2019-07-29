@@ -1,20 +1,10 @@
 <?php
-require_once 'vendor/autoload.php';
+//Criado por Anderson Ismael
+//10 de abril de 2019
+//http://archive.is/MAC5m
 
 function isDownloadable($url, $method = 'HEAD') {
-	$client = new \GuzzleHttp\Client ();//http://docs.guzzlephp.org/en/stable/
-	$headers = [ 
-			'headers' => [ 
-					'User-Agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:64.0) Gecko/20100101 Firefox/64.0',//26dez2018
-			],
-		    'http_errors' => false
-		    //http://docs.guzzlephp.org/en/stable/request-options.html#http-errors
-	];
-	$res = $client->request ( $method, $url, $headers );
-	if ($res->getStatusCode () == 200) {
-		return true;
-	} else {
-		return false;
-	}
+    if (!$fp = curl_init($url)) return false;
+    return true;
 }
-?>
+
